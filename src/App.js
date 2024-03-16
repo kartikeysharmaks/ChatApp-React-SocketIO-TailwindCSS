@@ -3,7 +3,7 @@ import Home from './components/Home.jsx';
 import ChatPage from './pages/ChatPage.jsx';
 import socketIO from 'socket.io-client';
 
-const url = process.env.PRODUCTION_URL ? process.env.PRODUCTION_URL : 'http://localhost:4000';
+const url = "https://chatapp-node-express-socketio.onrender.com/";
 const socket = socketIO.connect(url);
 function App() {
   return (
