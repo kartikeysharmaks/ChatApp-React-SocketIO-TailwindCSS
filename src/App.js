@@ -1,10 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import ChatPage from './pages/ChatPage.jsx';
-import socketIO from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 const url = "https://chatapp-node-express-socketio.onrender.com/";
-const socket = socketIO.connect(url);
+const socket = io(url, {
+  transports: ['websocket'],
+});
+
 function App() {
   return (
     <BrowserRouter>
